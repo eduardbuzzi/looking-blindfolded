@@ -17,14 +17,14 @@ esac
 }
 
 search () {
-echo "teste"
+echo 
 }
 
 locate () {
-echo "teste"
+echo 
 }
 
 portscan () {
-echo "teste"
+echo 
 }
 principal
