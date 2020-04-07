@@ -20,7 +20,7 @@ esac
 search () {
 echo
 read -p "How many random IPs do you want to check if are online? " FINAL
-read -p "Name of the list that will receive the IPs that are Online: " LISTNAME
+read -p "Name of the list that will receive the IPs that are Online: " FILE
 echo
 for i in `seq 1 $FINAL`
 do
@@ -31,10 +31,10 @@ NUM4=$(shuf -i 0-254 -n1)
 HOST="$NUM1.$NUM2.$NUM3.$NUM4"    
 echo "Checking if the IP $HOST is Online.."
 PING=$(ping -c 1 $HOST | grep "64 bytes" | cut -d ' ' -f4 | sed 's/.$//')
-echo $PING >> .$LISTNAME
+echo $PING >> .$FILE
 done
-awk 'NF>0' .$LISTNAME >> $LISTNAME.txt
-rm .$LISTNAME 2> /dev/null
+awk 'NF>0' .$FILE >> $FILE.txt
+rm .$FILE 2> /dev/null
 principal
 }
 
