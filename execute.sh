@@ -12,11 +12,11 @@ echo
 read -p "Your choice: " CHOICE
 
 case $CHOICE in
-  1) search;;
-  2) locate;;
-  3) portscan;;
-  4) echo && exit;;
-  *) sleep 0.5 && principal;;
+1) search;;
+2) locate;;
+3) portscan;;
+4) echo && exit;;
+*) sleep 0.5 && principal;;
 esac
 }
 
