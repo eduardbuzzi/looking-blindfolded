@@ -72,6 +72,85 @@ principal
 }
 
 portscan () {
-echo 
+echo
+read -p "Name of the list that has the IPs: " FILE
+echo
+echo "[1] SUPER SLOW and SUPER QUIET"
+echo "[2] SLOW and QUIET"
+echo "[3] NORMAL"
+echo "[4] FAST and NOISY"
+echo "[5] SUPER FAST and SUPER NOISY"
+echo
+read -p "What is your choice? " CHOICE
+echo
+case $CHOICE in
+1)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T1 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+2)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T2 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+3)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T3 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+4)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T4 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+5)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T5 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+*)
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+nmap -v -sV -T3 $IP
+echo
+echo "=-=-=-=-=-=-=-="
+echo
+done
+;;
+esac
+principal
 }
 principal
