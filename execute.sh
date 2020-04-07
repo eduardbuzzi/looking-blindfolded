@@ -75,6 +75,7 @@ principal
 }
 
 portscan () {
+apt-get -qq install nmap -y
 echo
 read -p "Name of the list that has the IPs: " FILE
 echo
