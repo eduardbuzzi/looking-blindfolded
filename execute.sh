@@ -46,10 +46,22 @@ for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
 wget -qq https://whatismyipaddress.com/ip/$IP
-COUNTRY=$(cat $IP | grep "<tr><th>Country:" | cut -d '>' -f5 | cut -d ' ' -f1)
+COUNTRY=$(cat $IP | grep "<tr><th>Country:" | cut -d '>' -f5 | cut -d '<' -f1)
 STATE=$(cat $IP | grep "<tr><th>State/Region:" | cut -d '>' -f5 | cut -d '<' -f1)
 CITY=$(cat $IP | grep "<tr><th>City:" | cut -d '>' -f5 | cut -d '<' -f1)
 rm $IP 2> /dev/null
+if [ -z "$COUNTRY" ]
+then
+COUNTRY="NOT FOUND"
+fi
+if [ -z "$STATE" ]
+then
+STATE="NOT FOUND"
+fi
+if [ -z "$CITY" ]
+then
+CITY="NOT FOUND"
+fi
 echo
 echo "IP -> $IP"
 echo "Country: $COUNTRY"
