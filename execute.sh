@@ -33,7 +33,7 @@ echo "Checking if the IP $HOST is Online.."
 PING=$(ping -c 1 $HOST | grep "64 bytes" | cut -d ' ' -f4 | sed 's/.$//')
 echo $PING >> .$FILE
 done
-awk 'NF>0' .$FILE >> $FILE.txt
+awk 'NF>0' .$FILE >> $FILE
 rm .$FILE 2> /dev/null
 principal
 }
