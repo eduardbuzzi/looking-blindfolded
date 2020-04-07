@@ -14,17 +14,17 @@ case $CHOICE in
   4) exit;;
   *) sleep 0.5 && principal;;
 esac
+}
 
-search () {
+search() {
 
 }
 
-locate () {
+locate() {
 
 }
 
-portscan () {
+portscan() {
 
-}
 }
 principal
