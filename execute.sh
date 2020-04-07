@@ -14,7 +14,6 @@ case $CHOICE in
   4) exit;;
   *) sleep 0.5 && principal;;
 esac
-}
 
 search () {
 
@@ -26,5 +25,6 @@ locate () {
 
 portscan () {
 
+}
 }
 principal
