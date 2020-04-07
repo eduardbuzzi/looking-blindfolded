@@ -27,9 +27,4 @@ locate () {
 portscan () {
 
 }
-
-exit()
-{
-   exit
-}
 principal
