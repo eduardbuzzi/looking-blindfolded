@@ -39,7 +39,24 @@ principal
 }
 
 locate () {
-echo 
+echo
+read -p "Name of the list that has the IPs: " FILE
+LINES=$(wc -l $FILE | cut -d ' ' -f1)
+for i in `seq 1 $LINES`
+do
+IP=$(cat $FILE | head -n$i | tail -n1)
+wget -qq https://whatismyipaddress.com/ip/$IP
+COUNTRY=$(cat $IP | grep "<tr><th>Country:" | cut -d '>' -f5 | cut -d ' ' -f1)
+STATE=$(cat $IP | grep "<tr><th>State/Region:" | cut -d '>' -f5 | cut -d '<' -f1)
+CITY=$(cat $IP | grep "<tr><th>City:" | cut -d '>' -f5 | cut -d '<' -f1)
+rm $IP 2> /dev/null
+echo
+echo "IP -> $IP"
+echo "Country: $COUNTRY"
+echo "State/Region: $STATE"
+echo "City: $CITY"
+done
+principal
 }
 
 portscan () {
