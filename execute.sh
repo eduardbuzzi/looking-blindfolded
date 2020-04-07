@@ -35,7 +35,6 @@ echo $PING >> .$LISTNAME
 done
 awk 'NF>0' .$LISTNAME >> $LISTNAME
 rm .$LISTNAME 2> /dev/null
-echo
 principal
 }
 
