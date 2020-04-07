@@ -1,5 +1,5 @@
 #!/bin/bash
-principal() {
+principal () {
 echo
 echo "[1] Search Public IPs"
 echo "[2] Locate IPs"
@@ -16,15 +16,15 @@ case $CHOICE in
 esac
 }
 
-search() {
+search () {
 
 }
 
-locate() {
+locate () {
 
 }
 
-portscan() {
+portscan () {
 
 }
 principal
