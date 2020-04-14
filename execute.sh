@@ -25,6 +25,8 @@ search () {
 echo
 read -p "How many random IPs do you want to check if are online? " FINAL
 read -p "Name of the list that will receive the IPs that are Online: " FILE
+TIME=$(( 10 * $FILE / 60))
+echo "On average, it will take $TIME minutes to complete the search for public IPs"
 echo
 for i in `seq 1 $FINAL`
 do
