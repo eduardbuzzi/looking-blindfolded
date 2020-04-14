@@ -73,6 +73,7 @@ echo "IP -> $IP"
 echo "Country: $COUNTRY"
 echo "State/Region: $STATE"
 echo "City: $CITY"
+sleep 5
 done
 principal
 }
