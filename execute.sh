@@ -2,7 +2,8 @@
 
 principal () {
 echo
-echo -e "Script \033[01;34mlooking-blindfolded\033[01;00m created by: \033[01;32mEduardo Buzzi\033[01;00m"
+echo -e "Script \033[01;34mlooking-blindfolded\033[01;00m
+echo -e "Created by: \033[01;32mEduardo Buzzi\033[01;00m"
 echo -e "More Scripts in: \033[01;31mhttps://github.com/eduardbuzzi\033[01;00m"
 echo
 echo "[1] Search Public IPs"
