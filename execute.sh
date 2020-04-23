@@ -36,7 +36,7 @@ NUM3=$(shuf -i 1-254 -n1)
 NUM4=$(shuf -i 0-254 -n1) 
 HOST="$NUM1.$NUM2.$NUM3.$NUM4"    
 echo "Checking if the IP $HOST is Online.."
-PING=$(nmap -sn -T5 $HOST | grep "host up")
+PING=$(nmap -sn $HOST | grep "host up")
 if [ -n "$PING" ]
 then
 echo $HOST >> .$FILE
