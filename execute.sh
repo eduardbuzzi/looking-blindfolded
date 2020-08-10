@@ -135,7 +135,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T1 -Pn $IP
+nmap -v -g 443 -sV -T1 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
@@ -146,7 +146,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T2 -Pn $IP
+nmap -v -g 443 -sV -T2 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
@@ -157,7 +157,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T3 -Pn $IP
+nmap -v -g 443 -sV -T3 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
@@ -168,7 +168,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T4 -Pn $IP
+nmap -v -g 443 -sV -T4 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
@@ -179,7 +179,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T5 -Pn $IP
+nmap -v -g 443 -sV -T5 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
@@ -190,7 +190,7 @@ LINES=$(wc -l $FILE | cut -d ' ' -f1)
 for i in `seq 1 $LINES`
 do
 IP=$(cat $FILE | head -n$i | tail -n1)
-nmap -v -sV -T3 -Pn $IP
+nmap -v -g 443 -sV -T3 -Pn $IP
 echo
 echo "=-=-=-=-=-=-=-="
 echo
